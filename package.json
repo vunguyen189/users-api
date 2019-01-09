@@ -1,0 +1,27 @@
+{
+  "name": "users-api",
+  "version": "1.0.0",
+  "description": "A basic/dummy in-memory API for managing users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-ball/users-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-ball/users-api/issues"
+  },
+  "homepage": "https://github.com/matt-ball/users-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
