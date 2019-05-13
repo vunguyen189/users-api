@@ -13,7 +13,7 @@ async function updateDocs () {
       url: `https://api.getpostman.com/collections/${collectionId}`,
       data: { collection }
     })
-    
+
     if (update) {
       console.log(`Postman collection ${collection.info.name} updated.`)
     } else {
