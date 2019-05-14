@@ -4,4 +4,4 @@ A super basic 100 line in-memory user management API, built from a mocked and te
 
 ## Documentation
 
-https://documenter.getpostman.com/view/5922408/RznHGc3V
+https://documenter.getpostman.com/view/5922408/S1LyVTQM
