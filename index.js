@@ -10,7 +10,7 @@ let users = []
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-// added some code
+
 app.post('/create', (req, res) => {
   const user = _.pick(req.body, requiredUserKeys)
 
