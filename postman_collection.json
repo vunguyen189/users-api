@@ -106,12 +106,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/createUser",
+							"raw": "{{url}}/create",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"createUser"
+								"create"
 							]
 						},
 						"description": "Creates a new user in the system. The user will be assigned an ID automatically. This can be found in the response."
