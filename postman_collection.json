@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "965436aa-6840-4bb3-b595-4d8d311a596b",
-		"name": "Users API 12345",
+		"_postman_id": "c22ef764-b464-424c-8702-750343478723",
+		"name": "Users API",
 		"description": "This collection is designed to show how you might mock, test document a new API. In this case, we're assuming that we're going to create a basic user management API.\n\nIt has basic CRUD operations listed below.\n\nHit the \"Run in Postman\" button to see the pre-request and test scripts powering this collection.\n\nTry running the collection through the Collection Runner to see how the mock allows us to scope out all our responses and write our tests in advance.\n\n## Summary\n\nHaving undergone the effort of building out our collection in Postman first:\n\n- Using Postman Mocks\n- Writing tests\n \nThis has allowed us to then build out our API to match, meaning we could:\n(Update the `url` in the environment to `http://localhost:3000` and run the following Node API: https://github.com/matt-ball/users-api)\n\n- Debug our API as it was being built\n- Ensure parity with our mocks, meeting the designed blueprint\n- Run tests against the API as it was being built so that it's watertight\n\nAs a result:\n\n- We now have a shareable collection for our API\n- We have beautiful, rich documentation showing how it works\n- We can run our collection in a fully automated fashion and attach it to our CI/CD pipeline\n- We can create a Postman Monitor with no added effort to check for responsiveness and correctness",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -73,6 +73,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -117,6 +127,111 @@
 						"description": "Creates a new user in the system. The user will be assigned an ID automatically. This can be found in the response."
 					},
 					"response": [
+						{
+							"name": "New user (failure)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "fhgu",
+										"value": "hff",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": ""
+									}
+								},
+								"url": {
+									"raw": "{{url}}/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2019 17:15:08 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-KsPJ95rCxmmvvRBY2Sqroxk2vmA\""
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=74ffbaf94164f2e0"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=7dd8ae46cd0d8f93"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"fail\"\n}"
+						},
 						{
 							"name": "New user",
 							"originalRequest": {
@@ -192,7 +307,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"firstName\": \"Benjamin\",\n    \"lastName\": \"Smith\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"firstName\": \"Ben\",\n    \"lastName\": \"Smith\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
 						}
 					]
 				}
@@ -275,10 +390,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/get?all=true",
 							"host": [
@@ -302,10 +413,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{url}}/get?all=true",
 									"host": [
@@ -352,7 +459,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Ben\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
+							"body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Benjamin\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
 						}
 					]
 				},
@@ -434,10 +541,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/get/?id={{id}}",
 							"host": [
@@ -463,10 +566,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{url}}/get/?id={{id}}",
 									"host": [
@@ -522,10 +621,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{url}}/get/?id={{id}}",
 									"host": [
@@ -574,7 +669,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Ben\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
+							"body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Benjamin\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
 						}
 					]
 				},
@@ -664,10 +759,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/get/?firstName={{firstName}}",
 							"host": [
@@ -693,10 +784,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{url}}/get/?firstName={{firstName}}",
 									"host": [
@@ -1016,6 +1103,7 @@
 									"",
 									"pm.test('User matches requested user', () => {",
 									"    const res = response.json();",
+									"    pm.globals.set(\"apiKey\", res.id);",
 									"    pm.expect(res.id).to.eql(id);",
 									"});",
 									"",
@@ -1158,7 +1246,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"fail\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
 						}
 					]
 				}
