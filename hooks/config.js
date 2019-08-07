@@ -1,1 +1,0 @@
-module.exports = {"postmanApiKey":"09f3f5c663db483b9f9d91fbbb16ca3b","collectionFile":"postman_collection.json","uid":"5922408-70531713-3c39-41ae-9bfc-c742597a0b4e"}
