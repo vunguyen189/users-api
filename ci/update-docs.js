@@ -6,7 +6,6 @@ updateDocs()
 
 async function updateDocs () {
   try {
-    console.log(collection)
     const update = await axios.request({
       method: 'put',
       params: { apikey },
