@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const https = require('https')
+const childProcess = require('child_process')
+const cwd = process.cwd()
+const cfg = require(path.resolve(cwd, 'hooks/config.js'))
+
+const options = {
+  hostname: 'api.getpostman.com',
+  port: 443,
+  path: `/collections/${cfg.uid}`,
+  method: 'GET',
+  headers: {
+    'X-Api-Key': cfg.postmanApiKey
+  }
+}
+
+const req = https.request(options, (res) => {
+  let d = ''
+
+  res.on('data', (chunk) => {
+    d += chunk
+  })
+
+  res.on('end', () => {
+    const { collectionFile } = cfg
+    const existingCollection = JSON.stringify(require(path.resolve(cwd, collectionFile)))
+    const collection = JSON.stringify(JSON.parse(d).collection)
+
+    if (existingCollection !== collection) {
+      fs.writeFileSync(collectionFile, collection)
+      childProcess.execSync(`git add ${collectionFile}`)
+      childProcess.execSync(`git commit -m 'Updated Postman collection'`)
+      console.log('Postman collection was updated. Commited to branch, please push again!')
+      process.exit(1)
+      // delete local copy?
+    }
+  });
+})
+
+req.on('error', (error) => {
+  console.error(error)
+})
+
+req.end()
