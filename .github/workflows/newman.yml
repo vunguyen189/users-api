@@ -1,4 +1,4 @@
-name: Newman Run
+name: Newman
 
 on:
   pull_request:
@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 8
-      - run: make bootstrap
-      - run: make test
+          node-version: 6
+      - run: npm i -g newman
+      - run: newman run <<collection file/url>> -e <<environment file/url>>
+      # https://github.com/postmanlabs/newman
