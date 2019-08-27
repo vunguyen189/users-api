@@ -1,0 +1,15 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: matt-ball/newman-action@0.0.1
+    - name: Newman Action
+      with:
+        collection: https://www.getpostman.com/collections/89ba0c919d73304be70d
+        environment: postman_environment.json
