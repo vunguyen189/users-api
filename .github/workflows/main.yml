@@ -9,7 +9,7 @@ jobs:
   newman:
     runs-on: ubuntu-latest
     steps:
-      - uses: matt-ball/newman-action@0.0.2
+      - uses: matt-ball/newman-action@0.0.3
         with:
           collection: "https://www.getpostman.com/collections/89ba0c919d73304be70d"
           environment: "postman_environment.json"
