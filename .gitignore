@@ -1,3 +1,2 @@
 node_modules
-ci/config.js
-hooks/config.js
+.postman.json
