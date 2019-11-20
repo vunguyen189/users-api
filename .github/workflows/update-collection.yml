@@ -1,0 +1,20 @@
+name: Update Postman Collection
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      run: |
+      git@github.com:matt-ball/postman-cli.git
+      cd postman-cli
+      npm i
+      npm link
+      cd ..
+      ${{ secrets.CLI }} > .postman.json
+      postman sync
