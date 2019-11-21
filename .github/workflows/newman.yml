@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: Install deps and start server
+        run: |
+          make bootstrap
+          make start
       - uses: matt-ball/newman-action@master
         with:
           collection: postman_collection.json
