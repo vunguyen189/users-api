@@ -13,10 +13,6 @@ jobs:
     - uses: actions/setup-node@master
     - name: Update collection
       run: |
-        git clone git@github.com:matt-ball/postman-cli.git
-        cd postman-cli
-        npm i
-        npm link
-        cd ..
+        npm i -g @matt.ball/postman-cli
         ${{ secrets.CLI }} > .postman.json
         postman sync
