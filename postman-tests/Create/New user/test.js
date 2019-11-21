@@ -1,8 +1,8 @@
 const _ = require('lodash')
 const res = pm.response.json()
 
-pm.test('Status code is 200', () => {
-  pm.response.to.have.status(200)
+pm.test('Status code is 404', () => {
+  pm.response.to.have.status(404)
 })
 
 pm.test('API response is successful', () => {
