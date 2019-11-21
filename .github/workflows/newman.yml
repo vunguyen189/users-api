@@ -14,7 +14,7 @@ jobs:
       - name: Install deps and start server
         run: |
           make bootstrap
-          node index.js
+          node index.js &
       - uses: matt-ball/newman-action@master
         with:
           collection: postman_collection.json
