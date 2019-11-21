@@ -1,17 +1,20 @@
 BIN = node_modules/.bin
 
-.PHONY: bootstrap lint start test
+.PHONY: bootstrap lint background watch test
 
 bootstrap:
 	npm install
 
 lint:
 	$(BIN)/standard
+	
+background:
+	node index.js &
 
-start:
+watch:
 	${BIN}/nodemon index.js
 
 test:
 	make lint
-	node index.js &
-	${BIN}/newman run https://www.getpostman.com/collections/89ba0c919d73304be70d -e postman_environment.json
+	make background
+	${BIN}/newman run postman_collection.json -e postman_environment.json
