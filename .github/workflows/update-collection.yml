@@ -15,5 +15,5 @@ jobs:
       run: |
         npm i -g @matt.ball/postman-cli
         echo ${{ secrets.CLI }} > .postman.json
-        ls -lsa
+        pwd
         postman sync
