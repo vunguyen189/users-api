@@ -1,6 +1,6 @@
 const res = pm.response.json();
 
-console.log('adding a message here')
+console.log('final adjustment')
 
 pm.test('Status code is 200', () => {
     pm.response.to.have.status(200);
