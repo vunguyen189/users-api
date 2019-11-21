@@ -13,7 +13,7 @@ jobs:
     - uses: actions/setup-node@master
     - name: Update collection
       run: |
-        npm i @matt.ball/postman-cli
+        npm i -g @matt.ball/postman-cli
         echo ${{ secrets.CLI }} > .postman.json
         ls -lsa
         node_modules/.bin/postman sync
