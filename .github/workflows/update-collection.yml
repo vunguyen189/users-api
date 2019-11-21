@@ -14,5 +14,5 @@ jobs:
     - name: Update collection
       run: |
         npm i -g @matt.ball/postman-cli
-        ${{ secrets.CLI }} > .postman.json
+        echo ${{ secrets.CLI }} > .postman.json
         postman sync
