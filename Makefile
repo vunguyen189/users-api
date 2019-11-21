@@ -6,7 +6,7 @@ bootstrap:
 	npm install
 
 lint:
-	$(BIN)/standard
+	$(BIN)/standard --global pm
 	
 background:
 	node index.js &
