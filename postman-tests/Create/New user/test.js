@@ -1,8 +1,6 @@
 const _ = require('lodash')
 const res = pm.response.json()
 
-console.log('final adjustment')
-
 pm.test('Status code is 200', () => {
   pm.response.to.have.status(200)
 })
