@@ -1,4 +1,5 @@
 const res = pm.response.json()
+const _ = require('lodash')
 const uniq = require('uniq')
 const utils = require('../../utils')
 

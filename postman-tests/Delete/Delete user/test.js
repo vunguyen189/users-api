@@ -22,6 +22,7 @@ pm.test('User can no longer be found', () => {
     header: 'x-mock-response-name:Get user by ID (no user found)',
     method: 'get'
   }, (err, res) => {
+    if (err) console.log(err)
     res = res.json()
     pm.expect(res.status).to.eql('no user found')
   })
