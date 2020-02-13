@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const res = pm.response.json()
 
 pm.test('Status code is 200', () => {

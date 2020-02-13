@@ -1,6 +1,8 @@
 const response = pm.response
 const id = pm.globals.get('id')
 
+console.log('hello world!')
+
 pm.test('Status code is 200', () => {
   pm.response.to.have.status(200)
 })
@@ -22,7 +24,6 @@ pm.test('User can no longer be found', () => {
     header: 'x-mock-response-name:Get user by ID (no user found)',
     method: 'get'
   }, (err, res) => {
-    if (err) console.log(err)
     res = res.json()
     pm.expect(res.status).to.eql('no user found')
   })
