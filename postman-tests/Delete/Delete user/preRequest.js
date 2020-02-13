@@ -11,6 +11,7 @@ pm.sendRequest({
     raw: `firstName=${firstName}&lastName=${lastName}&password=${password}`
   }
 }, (err, res) => {
+  if (err) console.log(err)
   res = res.json()
   pm.globals.set('id', res.id)
 })

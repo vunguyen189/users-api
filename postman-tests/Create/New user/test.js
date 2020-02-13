@@ -1,7 +1,10 @@
 const res = pm.response.json()
+const _ = require('lodash')
 const uniq = require('uniq')
+const utils = require('../../utils')
 
 console.log(uniq([1, 1, 1, 2, 1, 3]))
+console.log(utils.timestamp())
 
 pm.test('Status code is 200', () => {
   pm.response.to.have.status(200)
