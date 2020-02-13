@@ -1,7 +1,7 @@
 const response = pm.response
 const id = pm.globals.get('id')
 
-console.log('hello world!')
+console.log('hello world!!!')
 
 pm.test('Status code is 200', () => {
   pm.response.to.have.status(200)
