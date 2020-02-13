@@ -16,6 +16,6 @@ jobs:
         make bootstrap
         npm i -g @matt.ball/postman-cli
         echo ${{ secrets.CLI }} > .postman.json
-        pwd
+        cat .postman.json
         ls -lsa
         postman update
