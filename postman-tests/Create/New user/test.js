@@ -1,5 +1,10 @@
 const _ = require('lodash')
 const res = pm.response.json()
+const uniq = require('uniq')
+const common = require('../../common')
+
+console.log(uniq([1, 1, 1, 1, 2, 3]))
+common.log()
 
 pm.test('Status code is 200', () => {
   pm.response.to.have.status(200)
