@@ -5,7 +5,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: http://example.com
+- url: https://81cfad21-ff8a-41a7-976c-3b9eb0d6ad6c.mock.pstmn.io
   variables: {}
 paths:
   /create:
