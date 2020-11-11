@@ -17,6 +17,6 @@ jobs:
           make background
       - name: Lint code
         run: make lint
-      - uses: matt-ball/newman-action@0.2.0
+      - uses: matt-ball/newman-action@v0.2.0
         with:
           collection: https://www.getpostman.com/collections/2ed4d93d962a8ee1d9fa
