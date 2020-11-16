@@ -19,4 +19,5 @@ jobs:
         run: make lint
       - uses: matt-ball/newman-action@v0.2.0
         with:
-          collection: https://www.getpostman.com/collections/2ed4d93d962a8ee1d9fa
+          collection: postman_collection.json
+          environment: postman_environment.json
