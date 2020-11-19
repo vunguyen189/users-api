@@ -1,4 +1,4 @@
-name: Tests
+name: Users API CI
 
 on:
   pull_request:
