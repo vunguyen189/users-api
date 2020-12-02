@@ -12,7 +12,7 @@ paths:
     post:
       tags:
       - Create
-      summary: New user
+      summary: New
       description: Creates a new user in the system. The user will be assigned an ID automatically. This can be found in the response.
       operationId: NewUser
       parameters:
