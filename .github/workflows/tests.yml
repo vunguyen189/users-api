@@ -17,7 +17,7 @@ jobs:
           make background
       - name: Lint code
         run: make lint
-      - uses: matt-ball/newman-action@v0.2.3
+      - uses: matt-ball/newman-action@v0.2.4
         with:
           apiKey: ${{ secrets.POSTMANAPIKEY }}
           collection: ${{ secrets.COLLECTION }}
