@@ -22,4 +22,5 @@ jobs:
           apiKey: ${{ secrets.POSTMANAPIKEY }}
           collection: ${{ secrets.COLLECTION }}
           environment: 10016724-1ab563dc-70cf-4472-87a5-2d9e3e6cce6d
+          insecure: true
       
