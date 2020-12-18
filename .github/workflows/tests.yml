@@ -21,5 +21,4 @@ jobs:
         with:
           apiKey: ${{ secrets.POSTMANAPIKEY }}
           collection: ${{ secrets.COLLECTION }}
-          environment: postman_environment.json
-          folder: Read
+      
