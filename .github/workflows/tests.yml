@@ -21,6 +21,6 @@ jobs:
         with:
           apiKey: ${{ secrets.POSTMANAPIKEY }}
           collection: 10016724-95796187-1155-48d3-8aa8-1c3e61f76fd8
-          environment: postman_environment.json
+          environment: 10016724-9f2cb19b-05e2-4515-96fa-2eb56a5d1e43
           insecure: true
       
