@@ -73,6 +73,10 @@
                                 }
                             }
                         ],
+                        "_postman_id": "a4b3082d-5e9f-4741-8065-7987495019f8",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "auth": {
                                 "type": "noauth"
@@ -125,6 +129,7 @@
                         },
                         "response": [
                             {
+                                "id": "0e765085-e6b6-4b50-95f3-97c3f55be2cf",
                                 "name": "New user (failure)",
                                 "originalRequest": {
                                     "method": "POST",
@@ -143,9 +148,7 @@
                                     ],
                                     "body": {
                                         "mode": "file",
-                                        "file": {
-                                            "src": ""
-                                        }
+                                        "file": {}
                                     },
                                     "url": {
                                         "raw": "{{url}}/create",
@@ -227,9 +230,11 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "{\n    \"status\": \"fail\"\n}"
                             },
                             {
+                                "id": "23a1b2be-0677-4b9d-a981-b24795de3a32",
                                 "name": "New user",
                                 "originalRequest": {
                                     "method": "POST",
@@ -304,12 +309,13 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "{\n    \"status\": \"success\",\n    \"firstName\": \"Ben\",\n    \"lastName\": \"Smith\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
                             }
                         ]
                     }
                 ],
-                "protocolProfileBehavior": {}
+                "_postman_id": "071d332d-02fd-43cf-aa7d-055d45166332"
             },
             {
                 "name": "Read",
@@ -438,6 +444,10 @@
                                 ]
                             }
                         ],
+                        "_postman_id": "af454ed3-d5cc-4abc-bf1c-9004097002b7",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "auth": {
                                 "type": "noauth"
@@ -469,6 +479,7 @@
                         },
                         "response": [
                             {
+                                "id": "f9a185ec-2baa-4dcc-ad57-70ecf77f88d5",
                                 "name": "Get all users",
                                 "originalRequest": {
                                     "method": "GET",
@@ -519,6 +530,7 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Ben\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
                             }
                         ]
@@ -643,6 +655,10 @@
                                 ]
                             }
                         ],
+                        "_postman_id": "0e18ad3d-d933-4eee-9f9f-e2c5ad62aa3c",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "method": "GET",
                             "header": [
@@ -673,6 +689,7 @@
                         },
                         "response": [
                             {
+                                "id": "54418e43-d356-42e4-b34e-cc2a19958729",
                                 "name": "Get user by ID",
                                 "originalRequest": {
                                     "method": "GET",
@@ -725,9 +742,11 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Ben\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
                             },
                             {
+                                "id": "c2ded624-5447-4f88-8fa6-c43881072611",
                                 "name": "Get user by ID (no user found)",
                                 "originalRequest": {
                                     "method": "GET",
@@ -780,6 +799,7 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "{\n    \"status\": \"no user found\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b\"\n}"
                             }
                         ]
@@ -932,6 +952,10 @@
                                 ]
                             }
                         ],
+                        "_postman_id": "a03e54bd-388d-4bd2-937d-d9226479f9a2",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "method": "GET",
                             "header": [],
@@ -956,6 +980,7 @@
                         },
                         "response": [
                             {
+                                "id": "835f63d2-95f8-46ad-8402-a61ca23caf96",
                                 "name": "Get users by first name",
                                 "originalRequest": {
                                     "method": "GET",
@@ -1008,11 +1033,13 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "[\n    {\n        \"status\": \"success\"\n    },\n    {\n        \"firstName\": \"Ben\",\n        \"lastName\": \"Smith\",\n        \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n    }\n]"
                             }
                         ]
                     }
                 ],
+                "_postman_id": "8cade41f-6a13-46cf-a60f-a1f9d260e012",
                 "event": [
                     {
                         "listen": "prerequest",
@@ -1034,8 +1061,7 @@
                             ]
                         }
                     }
-                ],
-                "protocolProfileBehavior": {}
+                ]
             },
             {
                 "name": "Update",
@@ -1192,6 +1218,10 @@
                                 ]
                             }
                         ],
+                        "_postman_id": "d494beef-299a-4e27-81e0-bf8780b7dbc1",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "method": "PUT",
                             "header": [
@@ -1243,6 +1273,7 @@
                         },
                         "response": [
                             {
+                                "id": "8cb92924-8378-48a9-bb9e-180624e373ee",
                                 "name": "Update user",
                                 "originalRequest": {
                                     "method": "PUT",
@@ -1319,12 +1350,13 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "{\n    \"status\": \"success\",\n    \"firstName\": \"Benjamin\",\n    \"lastName\": \"Smith\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
                             }
                         ]
                     }
                 ],
-                "protocolProfileBehavior": {}
+                "_postman_id": "80e2b5ed-1898-4e1f-9e57-bfeae81af921"
             },
             {
                 "name": "Delete",
@@ -1449,6 +1481,10 @@
                                 ]
                             }
                         ],
+                        "_postman_id": "fa3df676-c29d-4667-8097-335ca104aee8",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
                         "request": {
                             "method": "DELETE",
                             "header": [
@@ -1486,6 +1522,7 @@
                         },
                         "response": [
                             {
+                                "id": "935b3b92-c843-428e-856b-31e001495293",
                                 "name": "Delete user",
                                 "originalRequest": {
                                     "method": "DELETE",
@@ -1548,12 +1585,13 @@
                                     }
                                 ],
                                 "cookie": [],
+                                "responseTime": null,
                                 "body": "{\n    \"status\": \"success\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\"\n}"
                             }
                         ]
                     }
                 ],
-                "protocolProfileBehavior": {}
+                "_postman_id": "130edddf-00ba-4a7d-9e71-07a55dd80029"
             }
         ],
         "event": [
@@ -1580,21 +1618,23 @@
         ],
         "variable": [
             {
-                "id": "6f98d7c0-fffa-4ad7-ae6c-b608431b4ce9",
+                "id": "6f1e90a3-9835-44c5-9c47-34ec342c7709",
                 "key": "firstName",
-                "value": "Ben"
+                "value": "Ben",
+                "type": "string"
             },
             {
-                "id": "16717d52-6d6b-4d0e-8515-547aa7222617",
+                "id": "d46c4d73-a1dc-4c27-9a19-cb0463373099",
                 "key": "lastName",
-                "value": "Smith"
+                "value": "Smith",
+                "type": "string"
             },
             {
-                "id": "a839e372-c123-4a08-9c14-5ce6207333ff",
+                "id": "39d33dd9-9c38-4997-900e-a5c065ef2ce2",
                 "key": "password",
-                "value": "pw"
+                "value": "pw",
+                "type": "string"
             }
-        ],
-        "protocolProfileBehavior": {}
+        ]
     }
 }
