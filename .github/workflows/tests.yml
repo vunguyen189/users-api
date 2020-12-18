@@ -20,7 +20,7 @@ jobs:
       - uses: matt-ball/newman-action@v0.2.4
         with:
           apiKey: ${{ secrets.POSTMANAPIKEY }}
-          collection: ${{ secrets.COLLECTION }}
+          collection: postman_collection.json
           environment: 10016724-1ab563dc-70cf-4472-87a5-2d9e3e6cce6d
           insecure: true
       
