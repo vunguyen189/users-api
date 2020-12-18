@@ -17,6 +17,6 @@ jobs:
           make background
       - name: Lint code
         run: |
-          npm i -g newman
-          newman run postman_collection.json -e postman_environment.json
+          npm i newman
+          node_modules/.bin/newman run postman_collection.json -e postman_environment.json
       
