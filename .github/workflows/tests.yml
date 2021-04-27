@@ -16,7 +16,9 @@ jobs:
           make bootstrap
           make background
       - name: Lint code
-        run: |
-          npm i newman
-          node_modules/.bin/newman run postman_collection.json -e postman_environment.json
-      
+        run: make lint
+      - uses: matt-ball/newman-action@master
+        with:
+          apiKey: ${{ secrets.POSTMANAPIKEY }}
+          collection: 10016724-b5432e7f-b55a-4f5a-9878-3c6c19e8ab6f
+          environment: postman_environment.json
